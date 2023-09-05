@@ -1,6 +1,4 @@
-// console.log("hey")
-// fetch('https://google.com/?query=js').then((data)=> console.log(data))
-
+//promises 2
 
 const server1 = {
     getData() {
@@ -47,12 +45,18 @@ pr1.then((data)=> {
     })
     .then((str) => {
         console.log(str)//"some string"
-        // если нету return - возвращает undefined
+    })
+    .then((str) => {
+        console.log(str)//"some string"
+        // если нету return у предыдущего then - возвращает undefined
     })
     .then((str)=> {
         console.log('data',sr) // если есть ошибка, то ниже ее then-ы пропусукаются и попадаем в catch
         // return fetch('https://google.com/?query=js')
         return str
+    })
+    .then((str) => {
+        console.log(str)//"some string"
     })
     .catch((err)=> {
         console.log('ERROR:', err) // выводим ошибку "ERROR: sr is not defined"
@@ -74,6 +78,7 @@ pr1.then((data)=> {
 // data Promise resolved
 // some string
 // some string
+// undefined
 // ERROR: sr is not defined
 // Finally
 
